@@ -1,0 +1,40 @@
+.col-width(@i) when (@i>=0) {
+  .col-width(@i - 1);
+  .kai-col-@{i} {
+    display: block;
+    flex: 0 0 @i / 24 * 100%;
+    max-width: @i / 24 * 100%;
+  }
+}
+
+.col-offset(@i) when (@i>=0) {
+  .col-offset(@i - 1);
+  .kai-col-offset-@{i} {
+    margin-left: @i / 24 * 100%;
+  }
+}
+
+.col-push(@i) when (@i>=0) {
+  .col-push(@i - 1);
+  .kai-col-push-@{i} {
+    left: @i / 24 * 100%;
+  }
+}
+
+// pull  position: relative;
+.col-pull(@i) when (@i>=0) {
+  .col-pull(@i - 1);
+  .kai-col-pull-@{i} {
+    right: @i / 24 * 100%;
+  }
+}
+
+.kai-col {
+  position: relative;
+  box-sizing: border-box;
+}
+
+.col-pull(24);
+.col-push(24);
+.col-offset(24);
+.col-width(24);
