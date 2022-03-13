@@ -17,6 +17,12 @@ export type RowJustify =
   | 'space-evenly';
 
 interface BaseRowProps {
+  /**
+   * 可以这样写属性描述
+   * @description       垂直方向对其方式
+   * @description.zh-CN 还支持不同的 locale 后缀来实现多语言描述
+   * @default           支持定义默认值
+   */
   align?: RowAlign;
   gutter?: RowGutter;
   justify?: RowJustify;
