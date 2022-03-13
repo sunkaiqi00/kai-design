@@ -86,7 +86,7 @@ export default () => (
 
 ## 禁用状态
 
-你可以使用 `disabled` 属性来定义按钮是否被禁用。
+使用 `disabled` 属性来定义按钮是否被禁用。
 
 使用 `disabled` 属性来控制按钮是否为禁用状态。 该属性接受一个 `Boolean` 类型的值。
 
@@ -177,7 +177,7 @@ export default () => (
 通过设置 `size` 为 `large` `small` 分别把按钮设为大、小尺寸。若不设置 `size`，则尺寸为中。
 
 ```tsx
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from 'kai-design';
 
 export default () => (
@@ -185,6 +185,66 @@ export default () => (
     <Button size="large">Large Button</Button>
     <Button>Default Button</Button>
     <Button size="small">Small Button</Button>
+  </>
+);
+```
+
+## 加载中
+
+通过设置 `loading` 属性为 `true` 来显示加载中状态。
+
+使用 `loadingIcon` 属性自定义您的 loading 图标。
+
+```tsx
+import React, { useState } from 'react';
+import { Button } from 'kai-design';
+import { StarOutlined } from '@ant-design/icons';
+
+export default () => {
+  const [loading, setLoading] = useState(false);
+
+  const handleLogin = () => {
+    setLoading(true);
+  };
+
+  const handleLoginSuccess = () => {
+    setLoading(false);
+  };
+
+  return (
+    <>
+      <Button onClick={handleLogin}>login</Button>
+      &nbsp;
+      <Button type="success" onClick={handleLoginSuccess}>
+        login success
+      </Button>
+      <br />
+      <br />
+      <Button type="primary" loading={loading}>
+        loading status
+      </Button>
+      &nbsp;
+      <Button loading={loading} loadingIcon={<StarOutlined spin />}>
+        loading status
+      </Button>
+    </>
+  );
+};
+```
+
+## 链接按钮
+
+通过设置 `href` 属性为链接设置地址, 及 `a` 标签的原生属性扩展按钮。
+
+```tsx
+import React, { useState } from 'react';
+import { Button } from 'kai-design';
+
+export default () => (
+  <>
+    <Button type="link" href="https://react.docschina.org/" target="_blank">
+      login
+    </Button>
   </>
 );
 ```

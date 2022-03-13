@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-
+import { Loading3QuartersOutlined } from '@ant-design/icons';
 import './index.less';
 
 export type ButtonSize = 'large' | 'default' | 'small';
@@ -24,6 +24,8 @@ export interface BaseButtonProps {
   plain?: boolean;
   round?: boolean;
   circle?: boolean;
+  loading?: boolean;
+  loadingIcon?: React.ReactElement;
   icon?: React.ReactElement;
 }
 
@@ -46,6 +48,8 @@ const Button: React.FC<ButtonProps> = (props) => {
     disabled,
     round,
     circle,
+    loading,
+    loadingIcon,
     size,
     children,
     href,
@@ -55,6 +59,8 @@ const Button: React.FC<ButtonProps> = (props) => {
     ...resetProps
   } = props;
 
+  const isDisabled = loading ? true : disabled;
+
   const classes = classNames('kai-btn', className, {
     [`kai-btn-${size}`]: size,
     [`kai-btn-${type}`]: type !== 'default' && type,
@@ -62,7 +68,7 @@ const Button: React.FC<ButtonProps> = (props) => {
     'kai-btn-plain': plain,
     'is-round': round,
     'is-circle': circle,
-    'is-disabled': disabled,
+    'is-disabled': isDisabled,
     disabled: type === 'link' && disabled,
   });
   if (type === 'link' && href) {
@@ -73,9 +79,9 @@ const Button: React.FC<ButtonProps> = (props) => {
     );
   } else {
     return (
-      <button className={classes} disabled={disabled} {...resetProps}>
+      <button className={classes} disabled={isDisabled} {...resetProps}>
         <span>
-          {icon}
+          {icon || (loading && (loadingIcon || <Loading3QuartersOutlined spin />))}
           {children}
         </span>
       </button>
