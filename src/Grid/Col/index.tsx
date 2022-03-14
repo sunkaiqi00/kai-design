@@ -6,14 +6,53 @@ import './index.less';
 export type ColGutter = number | number[];
 
 export interface BaseColProps {
+  /**
+   * @description       栅格占位格数，为 0 时相当于 display: none
+   * @description.zh-CN 还支持不同的 locale 后缀来实现多语言描述
+   */
   span?: number; // 占据宽度
+  /**
+   * @description       栅格左侧的间隔格数，间隔内不可以有栅格
+   * @description.zh-CN 还支持不同的 locale 后缀来实现多语言描述
+   * @default           0
+   */
   offset?: number; // 左偏移
+  /**
+   * @description       栅格向右移动格数
+   * @description.zh-CN 还支持不同的 locale 后缀来实现多语言描述
+   * @default           0
+   */
   push?: number; //通过使用 push(左) 和 pull(右) 类就可以很容易的改变列（column）的顺序
+  /**
+   * @description       栅格向左移动格数
+   * @description.zh-CN 还支持不同的 locale 后缀来实现多语言描述
+   * @default           0
+   */
   pull?: number;
-  gutter?: ColGutter;
+
+  /**
+   * @description       栅格顺序
+   * @description.zh-CN 还支持不同的 locale 后缀来实现多语言描述
+   * @default           0
+   */
+
   order?: number; // 排序
+  /**
+   * @description       flex 布局属性
+   * @description.zh-CN 还支持不同的 locale 后缀来实现多语言描述
+   * @default
+   */
   flex?: number | string; // flex-grow flex-shrink flex-basic
+  gutter?: ColGutter;
+  /**
+   * @description       额外样式
+   * @description.en 还支持不同的 locale 后缀来实现多语言描述
+   */
   style?: object;
+  /**
+   * @description       额外自定义类名
+   * @description.en 还支持不同的 locale 后缀来实现多语言描述
+   */
   className?: string;
 }
 
@@ -91,7 +130,7 @@ const Col: FC<BaseColProps> = (props) => {
 };
 
 Col.defaultProps = {
-  span: 0,
+  span: 24,
   offset: 0,
   pull: 0,
   push: 0,

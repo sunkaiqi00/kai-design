@@ -516,7 +516,7 @@ const lightWrapStyle = {
 export default () => (
   <>
     <h4>Percentage columns</h4>
-    <Row style={{ width: '600px' }}>
+    <Row>
       <Col flex={2} style={wrapStyle}>
         2 / 5
       </Col>
@@ -526,7 +526,7 @@ export default () => (
     </Row>
     <br />
     <h4>Fill rest</h4>
-    <Row style={{ width: '600px' }}>
+    <Row>
       <Col flex="100px" style={wrapStyle}>
         100px
       </Col>
@@ -535,7 +535,7 @@ export default () => (
       </Col>
     </Row>
     <h4>Raw flex style</h4>
-    <Row style={{ width: '600px' }}>
+    <Row>
       <Col flex="1 1 200px" style={wrapStyle}>
         1 1 200px
       </Col>
@@ -544,7 +544,7 @@ export default () => (
       </Col>
     </Row>
     <br />
-    <Row style={{ width: '600px' }}>
+    <Row>
       <Col flex="none" style={wrapStyle}>
         none
       </Col>
@@ -555,3 +555,11 @@ export default () => (
   </>
 );
 ```
+
+## Row 属性
+
+<API src="./Row/index.tsx" hideTitle></API>
+
+## Col 属性
+
+<API src="./Col/index.tsx" hideTitle></API>
