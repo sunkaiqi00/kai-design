@@ -243,8 +243,12 @@ import { Button } from 'kai-design';
 export default () => (
   <>
     <Button type="link" href="https://react.docschina.org/" target="_blank">
-      login
+      React doc
     </Button>
   </>
 );
 ```
+
+//exports='["BaseButtonProps"]'
+
+<API></API>
