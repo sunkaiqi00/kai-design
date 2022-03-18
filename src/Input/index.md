@@ -11,8 +11,11 @@ import { SearchOutlined } from '@ant-design/icons';
 
 export default () => {
   const [text, setText] = useState('');
-
-  return <Input value={text} placeholder="请输入内容..." />;
+  const handleChange = (e) => {
+    console.log(e.target.value);
+    setText(e.target.value);
+  };
+  return <Input value={text} onChange={handleChange} clearable placeholder="请输入内容..." />;
 };
 ```
 
@@ -25,15 +28,13 @@ import React, { useState } from 'react';
 import { Input } from 'kai-design';
 
 export default () => {
-  const [text, setText] = useState('');
-
   return (
     <>
-      <Input value={text} size="large" placeholder="large" />
+      <Input size="large" placeholder="large" />
       <br />
-      <Input value={text} placeholder="default" />
+      <Input placeholder="default" />
       <br />
-      <Input value={text} size="small" placeholder="small" />
+      <Input size="small" placeholder="small" />
     </>
   );
 };
@@ -91,3 +92,5 @@ export default () => {
   );
 };
 ```
+
+<API></API>

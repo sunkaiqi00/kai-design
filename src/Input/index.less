@@ -8,7 +8,8 @@
   position: relative;
   display: flex;
   width: 100%;
-  .kai-input-icon {
+  .kai-input-icon,
+  .kai-input-clearable {
     position: absolute;
     display: flex;
     align-items: center;
@@ -24,9 +25,19 @@
       padding-left: 35px;
     }
   }
-  .kai-suffix-icon {
+  .kai-suffix-icon,
+  .kai-input-clearable {
     right: 0;
     padding-right: 10px;
+  }
+  .kai-input-clearable {
+    // color: @gray-400;
+    font-size: @font-size * 0.9;
+    cursor: pointer;
+    transition: color 0.15s linear;
+    &:hover {
+      color: @gray-600;
+    }
   }
   .kai-input-inner {
     &:disabled,
