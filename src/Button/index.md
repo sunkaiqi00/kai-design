@@ -20,6 +20,31 @@ import {
 
 export default () => (
   <>
+    <Button type="primary" plain>
+      Primary
+    </Button>
+    <br />
+    <br />
+    <Button type="success" plain>
+      Success
+    </Button>
+    <br />
+    <br />
+    <Button type="info" plain>
+      Info
+    </Button>
+    <br />
+    <br />
+    <Button type="warning" plain>
+      Warning
+    </Button>
+    <br />
+    <br />
+    <Button type="danger" plain>
+      Danger
+    </Button>
+    <br />
+    <br />
     <Button>Default</Button>
     <Button type="primary">Primary</Button>
     <Button type="success">Success</Button>
