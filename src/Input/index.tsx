@@ -102,6 +102,10 @@ const Input: React.FC<InputProps> = (props) => {
     if (inputRef.current) {
       const input = inputRef.current as HTMLInputElement;
       input.value = '';
+      const event = new InputEvent('input');
+      console.log(event);
+
+      input.dispatchEvent(event);
     }
   };
 

@@ -11,11 +11,16 @@ import { SearchOutlined } from '@ant-design/icons';
 
 export default () => {
   const [text, setText] = useState('');
-  const handleChange = (e) => {
+  const handleInput = (e) => {
     console.log(e.target.value);
     setText(e.target.value);
   };
-  return <Input value={text} onChange={handleChange} clearable placeholder="请输入内容..." />;
+  return (
+    <>
+      <p>{text}</p>
+      <Input value={text} onInput={handleInput} clearable placeholder="请输入内容..." />
+    </>
+  );
 };
 ```
 
