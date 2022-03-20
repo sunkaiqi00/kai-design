@@ -7,20 +7,8 @@
 ```tsx
 import React, { useState } from 'react';
 import { Input } from 'kai-design';
-import { SearchOutlined } from '@ant-design/icons';
 
-export default () => {
-  const [text, setText] = useState('');
-  const handleInput = (e) => {
-    setText(e.target.value);
-  };
-  return (
-    <>
-      <p>{text}</p>
-      <Input value={text} onInput={handleInput} clearable placeholder="请输入内容..." />
-    </>
-  );
-};
+export default () => <Input placeholder="请输入内容..." />;
 ```
 
 ## 不同尺寸的输入框
@@ -60,6 +48,17 @@ export default () => {
 };
 ```
 
+## 带移除图标
+
+通过 `clearable` 属性指定带移除图标的输入框，点击图标删除所有内容。
+
+```tsx
+import React, { useState } from 'react';
+import { Input } from 'kai-design';
+
+export default () => <Input clearable placeholder="请输入内容..." />;
+```
+
 ## 带 icon 的输入框
 
 添加图标以显示输入框类型。
@@ -82,7 +81,9 @@ export default () => {
 };
 ```
 
-## 文本域输入框
+## 前置/后置标签
+
+通过 `addonBefore`，`addonAfter` 用于配置一些固定组合。
 
 ```tsx
 import React from 'react';
@@ -91,7 +92,38 @@ import { Input } from 'kai-design';
 export default () => {
   return (
     <>
-      <Input type="textarea" />
+      <Input addonBefore="http://" defaultValue=".com" />
+      <br />
+      <Input addonAfter=".com" defaultValue="www.baidu" />
+      <br />
+      <Input addonBefore="http://" addonAfter=".com" defaultValue="www.baidu" />
+      <br />
+      <Input
+        addonBefore={
+          <select style={{ border: 'none', backgroundColor: 'transparent', width: '70px' }}>
+            <option>http://</option>
+            <option>https://</option>
+          </select>
+        }
+        addonAfter=".com"
+        defaultValue="www.baidu"
+      />
+    </>
+  );
+};
+```
+
+## 文本域输入框
+
+```tsx
+import React from 'react';
+import { Input } from 'kai-design';
+
+export default () => {
+  const { TextArea } = Input;
+  return (
+    <>
+      <TextArea />
     </>
   );
 };

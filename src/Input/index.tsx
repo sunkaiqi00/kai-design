@@ -7,6 +7,7 @@ import React, {
   useRef,
   KeyboardEvent,
   KeyboardEventHandler,
+  useEffect,
 } from 'react';
 import classNames from 'classnames';
 
@@ -26,7 +27,7 @@ export interface BaseInputProps {
    */
   value?: string;
   /**
-   * @description       容 输入框默认内容
+   * @description       输入框默认内容
    * @description.zh-CN 还支持不同的 locale 后缀来实现多语言描述
    */
   defaultValue?: string;
@@ -64,6 +65,16 @@ export interface BaseInputProps {
    * @default           false
    */
   clearable?: boolean;
+  /**
+   * @description       是否自动获取焦点
+   * @description.zh-CN 还支持不同的 locale 后缀来实现多语言描述
+   * @default           false
+   */
+  focus?: boolean;
+  /**
+   * @description       按下回车的回调
+   * @description.zh-CN 还支持不同的 locale 后缀来实现多语言描述
+   */
   onPressEnter?: (e: KeyboardEvent) => void;
   // onChange?: (e: ChangeEvent<HTMLInputElement>) => void,
 }
@@ -75,6 +86,7 @@ const Input: React.FC<InputProps> = (props) => {
     size,
     value,
     defaultValue,
+    focus,
     disabled,
     clearable,
     addonBefore,
@@ -85,13 +97,15 @@ const Input: React.FC<InputProps> = (props) => {
   } = props;
   const inputRef = useRef(null);
   const [text, setText] = useState(value || defaultValue);
-  const wrapperClasses = classNames('kai-input', {
-    [`kai-input-${size}`]: size,
-  });
 
-  const inputClasses = classNames('kai-input-inner', {
-    'kai-input-disabled': disabled,
-  });
+  useEffect(() => {
+    if (focus) {
+      if (inputRef.current) {
+        const input = inputRef.current as HTMLInputElement;
+        input.focus();
+      }
+    }
+  }, []);
 
   // 清空事件
   const clearInput = () => {
@@ -138,13 +152,21 @@ const Input: React.FC<InputProps> = (props) => {
     }
   };
 
+  // ================ classNames styles ================
+  const wrapperClasses = classNames('kai-input', {
+    [`kai-input-${size}`]: size,
+  });
+
+  const inputClasses = classNames('kai-input-inner', {
+    'kai-input-disabled': disabled,
+  });
   const BorderRadiusStyle =
     addonBefore && addonAfter
       ? { borderRadius: 0 }
       : addonAfter
       ? {
-          'border-top-right-radius': 0,
-          'border-bottom-right-radius': 0,
+          borderTopRightRadius: 0,
+          borderBottomRightRadius: 0,
         }
       : {};
 
