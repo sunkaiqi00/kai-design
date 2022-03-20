@@ -1,8 +1,26 @@
-@import '../style/colors.less';
-@import '../style//varibales.less';
+@import '../style/varibales.less';
 
-@input-disabled-bg: #f5f5f5;
-@input-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+.input-disabled-mixin {
+  &:disabled,
+  &[readonly],
+  &.kai-input-disabled {
+    color: @gray-500;
+    background-color: @disabled-bg;
+    border-color: @border-color-base;
+    border-radius: @border-radius;
+    // border-color: #d9d9d9;
+    // box-shadow: none;
+    cursor: not-allowed;
+    // border-color: @input-disabled-border-color;
+    // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655.
+    opacity: 1;
+    opacity: 1;
+  }
+}
+
+:export {
+  inputDisabled: .input-disabled-mixin();
+}
 
 .kai-input {
   position: relative;
@@ -34,30 +52,12 @@
     // color: @gray-400;
     font-size: @font-size * 0.9;
     cursor: pointer;
-    transition: color 0.15s linear;
+    transition: color 0.2s linear;
     &:hover {
       color: @gray-600;
     }
   }
-  .kai-input-inner {
-    &:disabled,
-    &[readonly],
-    &.kai-input-disabled {
-      color: @gray-500;
-      background-color: @input-disabled-bg;
-      border-color: @border-color-base;
-      border-radius: @border-radius;
-      // border-color: #d9d9d9;
-      // box-shadow: none;
-      cursor: not-allowed;
-      // border-color: @input-disabled-border-color;
-      // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655.
-      opacity: 1;
-      opacity: 1;
-    }
-  }
 }
-
 .kai-input-inner {
   box-sizing: border-box;
   width: 100%;
@@ -91,8 +91,22 @@
     // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
     opacity: 1;
   }
+  &:disabled,
+  &[readonly],
+  &.kai-input-disabled {
+    color: @gray-500;
+    background-color: @disabled-bg;
+    border-color: @border-color-base;
+    border-radius: @border-radius;
+    // border-color: #d9d9d9;
+    // box-shadow: none;
+    cursor: not-allowed;
+    // border-color: @input-disabled-border-color;
+    // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655.
+    opacity: 1;
+    opacity: 1;
+  }
 }
-
 .kai-input-large {
   .kai-prefix-icon + .kai-input-inner {
     padding-left: 40px;
@@ -129,7 +143,7 @@
   font-size: @font-size; // Match inputs
   line-height: @line-height-base;
   white-space: nowrap;
-  background-color: @input-disabled-bg;
+  background-color: @disabled-bg;
   border: @border-width solid @gray-500;
 }
 .kai-input-group-addon-before {

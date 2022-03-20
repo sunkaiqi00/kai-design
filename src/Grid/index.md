@@ -24,7 +24,7 @@ const deepBlue = 'rgba(0, 146, 255, 1)';
 
 const wrapStyle = {
   backgroundColor: deepBlue,
-  'text-align': 'center',
+  textAlign: 'center',
   padding: '8px 0',
   color: '#fff',
 };
@@ -97,7 +97,7 @@ const deepBlue = 'rgba(0, 146, 255, 1)';
 
 const wrapStyle = {
   backgroundColor: deepBlue,
-  'text-align': 'center',
+  textAlign: 'center',
   padding: '8px 0',
   color: '#fff',
 };
@@ -166,7 +166,7 @@ const deepBlue = 'rgba(0, 146, 255, 1)';
 
 const wrapStyle = {
   backgroundColor: deepBlue,
-  'text-align': 'center',
+  textAlign: 'center',
   padding: '8px 0',
   color: '#fff',
 };
@@ -216,7 +216,7 @@ const deepBlue = 'rgba(0, 146, 255, 1)';
 
 const wrapStyle = {
   backgroundColor: deepBlue,
-  'text-align': 'center',
+  textAlign: 'center',
   padding: '8px 0',
   color: '#fff',
 };
@@ -254,7 +254,7 @@ const deepBlue = 'rgba(0, 146, 255, 1)';
 
 const wrapStyle = {
   backgroundColor: deepBlue,
-  'text-align': 'center',
+  textAlign: 'center',
   padding: '8px 0',
   color: '#fff',
 };
@@ -374,7 +374,7 @@ const deepBlue = 'rgba(0, 146, 255, 1)';
 
 const wrapStyle = {
   backgroundColor: deepBlue,
-  'text-align': 'center',
+  textAlign: 'center',
   padding: '8px 0',
   color: '#fff',
 };
@@ -459,7 +459,7 @@ const deepBlue = 'rgba(0, 146, 255, 1)';
 
 const wrapStyle = {
   backgroundColor: deepBlue,
-  'text-align': 'center',
+  textAlign: 'center',
   padding: '8px 0',
   color: '#fff',
 };
@@ -503,7 +503,7 @@ const deepBlue = 'rgba(0, 146, 255, 1)';
 
 const wrapStyle = {
   backgroundColor: deepBlue,
-  'text-align': 'center',
+  textAlign: 'center',
   padding: '8px 0',
   color: '#fff',
 };

@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import Input, { InputProps } from '.';
-import TextArea, { TextAreaProps } from './textarea/TextArea';
+import TextArea, { TextAreaProps } from './textarea';
 
 export type IInput = FC<InputProps> & {
   TextArea: FC<TextAreaProps>;

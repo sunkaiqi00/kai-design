@@ -124,6 +124,9 @@ export default () => {
   return (
     <>
       <TextArea />
+      <br />
+      <br />
+      <TextArea disabled />
     </>
   );
 };
