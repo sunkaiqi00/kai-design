@@ -12,7 +12,6 @@ import { SearchOutlined } from '@ant-design/icons';
 export default () => {
   const [text, setText] = useState('');
   const handleInput = (e) => {
-    console.log(e.target.value);
     setText(e.target.value);
   };
   return (

@@ -5,6 +5,8 @@ import React, {
   ChangeEvent,
   useState,
   useRef,
+  KeyboardEvent,
+  KeyboardEventHandler,
 } from 'react';
 import classNames from 'classnames';
 
@@ -18,6 +20,16 @@ export interface BaseInputProps {
    * @description.zh-CN 还支持不同的 locale 后缀来实现多语言描述
    */
   size?: 'large' | 'default' | 'small';
+  /**
+   * @description       输入框内容
+   * @description.zh-CN 还支持不同的 locale 后缀来实现多语言描述
+   */
+  value?: string;
+  /**
+   * @description       容 输入框默认内容
+   * @description.zh-CN 还支持不同的 locale 后缀来实现多语言描述
+   */
+  defaultValue?: string;
   /**
    * @description       是否禁用
    * @description.zh-CN 还支持不同的 locale 后缀来实现多语言描述
@@ -52,16 +64,17 @@ export interface BaseInputProps {
    * @default           false
    */
   clearable?: boolean;
+  onPressEnter?: (e: KeyboardEvent) => void;
   // onChange?: (e: ChangeEvent<HTMLInputElement>) => void,
 }
 
 export type InputProps = BaseInputProps & Omit<InputHTMLAttributes<HTMLElement>, 'size'>;
 
 const Input: React.FC<InputProps> = (props) => {
-  const inputRef = useRef(null);
   const {
     size,
     value,
+    defaultValue,
     disabled,
     clearable,
     addonBefore,
@@ -70,14 +83,60 @@ const Input: React.FC<InputProps> = (props) => {
     suffixIcon,
     ...resetProps
   } = props;
-  console.log(value);
-
+  const inputRef = useRef(null);
+  const [text, setText] = useState(value || defaultValue);
   const wrapperClasses = classNames('kai-input', {
     [`kai-input-${size}`]: size,
   });
+
   const inputClasses = classNames('kai-input-inner', {
     'kai-input-disabled': disabled,
   });
+
+  // 清空事件
+  const clearInput = () => {
+    if (inputRef.current) {
+      const input = inputRef.current as HTMLInputElement;
+      input.value = '';
+      // change 事件待发现 目前触发不了
+      // const event = new Event('change', { bubbles: true });//new InputEvent('input')
+      // const event = document.createEvent("HTMLEvents");
+      // event.initEvent("change", true, true);
+
+      const event = new InputEvent('input', { bubbles: true });
+      input.dispatchEvent(event);
+    }
+  };
+
+  // const handleChange = (e: InputEvent) => {
+  //   console.log(e);
+  //   setText(e.target.value)
+  //   if (props.onChange) {
+  //     props.onChange(e)
+  //   }
+  // };
+
+  // input事件
+  const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
+    setText(e.target.value);
+    if (props.onInput) {
+      props.onInput(e);
+    }
+  };
+
+  // onPressEnter在使用Input组件时 会出现警告
+  // 键盘事件
+  const handleKeyPress = (e: KeyboardEvent<HTMLElement>) => {
+    if (e.key === 'Enter') {
+      if (props.onPressEnter) {
+        props.onPressEnter(e);
+      }
+    } else {
+      if (props.onKeyPress) {
+        props.onKeyPress(e);
+      }
+    }
+  };
 
   const BorderRadiusStyle =
     addonBefore && addonAfter
@@ -98,31 +157,23 @@ const Input: React.FC<InputProps> = (props) => {
         : { paddingRight: '35px' }
       : {};
 
-  const clearInput = () => {
-    if (inputRef.current) {
-      const input = inputRef.current as HTMLInputElement;
-      input.value = '';
-      const event = new InputEvent('input');
-      console.log(event);
-
-      input.dispatchEvent(event);
-    }
-  };
-
   return (
     <div className={wrapperClasses}>
       {addonBefore && <div className="kai-input-group-addon-before">{addonBefore}</div>}
       {prefixIcon && <span className="kai-prefix-icon kai-input-icon">{prefixIcon}</span>}
+      {/* onChange={handleChange} */}
       <input
         ref={inputRef}
         disabled={disabled}
         {...resetProps}
         className={inputClasses}
         style={{ ...inputPadRightStyle, ...BorderRadiusStyle }}
+        onInput={handleInput}
+        onKeyPress={handleKeyPress}
       />
       {suffixIcon && <span className="kai-suffix-icon kai-input-icon">{suffixIcon}</span>}
       {addonAfter && <div className="kai-input-group-addon-after">{addonAfter}</div>}
-      {clearable && value && (
+      {clearable && text && (
         <span className="kai-input-clearable" onClick={clearInput}>
           <CloseCircleFilled />
         </span>

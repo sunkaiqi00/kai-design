@@ -82,7 +82,6 @@ const Row: FC<BaseRowProps> = (props) => {
       }
     });
   };
-  console.log(renderChildren());
 
   return (
     <div className={classes} {...resetProps} style={RowStyle}>
