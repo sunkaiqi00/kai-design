@@ -113,23 +113,35 @@ export default () => {
 };
 ```
 
-## 文本域输入框
+## 文本域
+
+通过 `showCount`设置是否展示字数，`clearable`设置是否显示清空按钮，`disabled`设置是否禁用。
 
 ```tsx
-import React from 'react';
+import React, { useState } from 'react';
 import { Input } from 'kai-design';
 
 export default () => {
   const { TextArea } = Input;
+
   return (
     <>
       <TextArea />
       <br />
+      <TextArea maxLength={100} showCount />
       <br />
-      <TextArea disabled />
+      <TextArea clearable value="something text..." />
+      <br />
+      <TextArea disabled defaultValue="disabled textarea" />
     </>
   );
 };
 ```
 
-<API></API>
+## Input 属性
+
+<API hideTitle></API>
+
+## Input.TextArea 属性
+
+<API src="./textarea/index.tsx" hideTitle></API>

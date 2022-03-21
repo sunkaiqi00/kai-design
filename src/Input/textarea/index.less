@@ -1,9 +1,26 @@
 @import '../../style/varibales.less';
 
+.kai-textarea-wrapper {
+  flex-direction: column;
+  .kai-input-clearable {
+    top: 16px;
+    height: auto;
+    transform: translateY(-50%);
+  }
+  .kai-textarea-count {
+    align-self: flex-end;
+    color: @gray-600;
+    font-size: @font-size;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+}
+
 textarea.kai-textarea {
   max-width: 100%;
   height: auto;
   min-height: 32px;
   line-height: 1.5715;
   vertical-align: bottom;
+  resize: vertical;
 }

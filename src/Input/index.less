@@ -49,6 +49,7 @@
     padding-right: 10px;
   }
   .kai-input-clearable {
+    z-index: 101;
     // color: @gray-400;
     font-size: @font-size * 0.9;
     cursor: pointer;
@@ -59,6 +60,7 @@
   }
 }
 .kai-input-inner {
+  z-index: 100;
   box-sizing: border-box;
   width: 100%;
   padding: 4px 11px;
@@ -74,10 +76,10 @@
   border-radius: @border-radius;
   // box-shadow: @box-shadow-inset;
   transition: @input-transition;
-  &:not(.kai-input-disabled):hover {
+  &:not(disabled):not(.kai-input-disabled):hover {
     border-color: lighten(@primary, 5%);
   }
-  &:focus {
+  &:not(disabled):not(.kai-input-disabled):focus {
     color: @gray-700;
     background-color: @white;
     border-color: lighten(@primary, 20%);
