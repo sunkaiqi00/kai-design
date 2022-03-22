@@ -6,3 +6,5 @@ export { default as Row } from './Grid/Row';
 export { default as Col } from './Grid/Col';
 
 export { default as Input } from './Input/trans';
+
+export { default as Menu } from './Menu/trans'

@@ -1,0 +1,202 @@
+@import '../style/varibales.less';
+@import '../style/mixins.less';
+@import '../style/animation.less';
+@menu-box-shadow: inset 0 1px 0 rgba(@white, 0.15), 0 1px 1px rgba(@black, 0.075);
+@arrow-transition: transform 0.3s linear;
+@menu-item-active-border-width: 2px;
+@menu-height: 40px;
+@menu-line-height: @menu-height;
+@submenu-box-shadow: 0 3px 6px -4px #0000001f, 0 6px 16px #00000014, 0 9px 28px 8px #0000000d;
+@scaleAnimate: scaleAnimate 0.2s linear;
+
+.borderLine(@top, @right, @bottom, @left, @height, @width,@opacity:1,@animation:'') {
+  &::after {
+    content: '';
+    position: absolute;
+    top: @top;
+    right: @right;
+    bottom: @bottom;
+    left: @left;
+    display: block;
+    width: @width;
+    height: @height;
+    background-color: @primary;
+    transition: opacity 0.3s;
+    opacity: @opacity;
+    animation: @animation;
+  }
+}
+
+.kai-menu {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  font-size: @font-size;
+  list-style: none;
+  .kai-menu-item {
+    height: @menu-height;
+    line-height: @menu-height;
+    cursor: pointer;
+    transition: all 0.3s;
+    & > span,
+    & > .kai-submenu-title > span {
+      .flex-col-row-center-gap6();
+      justify-content: flex-start;
+    }
+    &.is-disabled {
+      color: @gray-500;
+      // pointer-events: none;
+      cursor: not-allowed;
+    }
+    .anticon-down,
+    .anticon-right {
+      font-size: 12px;
+      transition: transform 0.3s linear;
+    }
+  }
+
+  .kai-submenu {
+    padding-left: 0;
+    white-space: nowrap;
+    // display: none;
+    list-style: none;
+    .kai-menu-item {
+      position: relative;
+      color: @gray-900;
+      cursor: pointer;
+    }
+  }
+  // .kai-submenu.menu-opened {
+  //   display: block;
+  // }
+}
+.kai-menu-horizontal {
+  border-bottom: @border-width solid @border-color;
+  > .kai-menu-item {
+    position: relative;
+    box-sizing: border-box;
+    .borderLine(
+      '',
+      '',
+      0,
+      0,
+      @menu-item-active-border-width,
+      100%,
+      0
+    );
+    &.is-active,
+    &:not(.is-disabled):hover {
+      color: @primary;
+      > .kai-submenu-title {
+        .anticon-down {
+          transform: rotate(180deg);
+        }
+      }
+      &::after {
+        opacity: 1;
+      }
+    }
+    > .kai-submenu-title {
+      .flex-col-row-center-gap6();
+      .anticon-right {
+        display: none;
+      }
+    }
+    .kai-submenu-item {
+      .kai-submenu {
+        position: absolute;
+        top: 0;
+        left: 104%;
+      }
+      .kai-submenu-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .anticon-down {
+          display: none;
+        }
+      }
+    }
+    // .kai-menu-item {
+    //   &:hover {
+    //     .anticon-right,
+    //     .anticon-down {
+    //       transform: rotate(180deg);
+    //     }
+    //   }
+    // }
+  }
+  .kai-submenu {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    z-index: 100;
+    box-sizing: border-box;
+    min-width: 100%;
+    padding: 3px 0;
+    background: @white;
+    box-shadow: @submenu-box-shadow;
+    .kai-menu-item {
+      color: @gray-700;
+      &:not(.is-disabled):hover {
+        background-color: rgba(@gray-500, 0.15);
+        // color: @primary;
+        > .kai-submenu-title {
+          .anticon-right {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+  }
+}
+.kai-menu-vertical {
+  flex-direction: column;
+  border-right: @border-width solid @border-color;
+  border-bottom: 0px;
+  .kai-menu-item {
+    padding-top: 2px;
+    padding-bottom: 2px;
+
+    &:not(.is-disabled):hover {
+      color: @primary;
+    }
+    &.is-active {
+      position: relative;
+      background-color: rgba(@primary, 0.1);
+      color: @primary;
+      .borderLine(
+        0,
+        0,
+        '',
+        '',
+        100%,
+        @menu-item-active-border-width,
+        1,
+        @scaleAnimate
+      );
+    }
+    &:focus {
+      background-color: rgba(@primary, 0.1);
+    }
+  }
+  .kai-submenu {
+    background-color: #fafafa;
+  }
+  .kai-submenu-item {
+    position: relative;
+    // padding: 0 !important;
+    .kai-submenu-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: @white;
+      span:nth-child(1) {
+        transition: @arrow-transition;
+      }
+      .arrow-rotate {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
