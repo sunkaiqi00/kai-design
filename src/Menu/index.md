@@ -23,7 +23,7 @@ const { Item, SubMenu } = Menu;
 
 export default () => {
   return (
-    <Menu mode="horizontal">
+    <Menu mode="horizontal" selectedIndex="1">
       <Item className="item" index="1">
         <MailOutlined />
         Navigation One
@@ -36,7 +36,7 @@ export default () => {
         <Item index="3-1">item one</Item>
         <Item index="3-2">item two</Item>
         <Item index="3-3">item three</Item>
-        <SubMenu index="3-4" title="SubMenu2">
+        <SubMenu index="3-4" title="item four submenu">
           <Item index="3-4-1">item one</Item>
           <Item index="3-4-2">item two</Item>
           <Item index="3-4-3">item three</Item>
@@ -65,7 +65,7 @@ export default () => {
       mode="vertical"
       selectedIndex="1"
       defaultOpenIndex={['4']}
-      style={{ width: '260px', height: '400px' }}
+      style={{ width: '260px', height: '400px', overflow: 'auto' }}
     >
       <Item className="item" index="1">
         <MailOutlined />

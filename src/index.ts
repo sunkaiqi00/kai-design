@@ -7,4 +7,6 @@ export { default as Col } from './Grid/Col';
 
 export { default as Input } from './Input/trans';
 
-export { default as Menu } from './Menu/trans'
+export { default as Menu } from './Menu/trans';
+
+export { default as CollapseTransition } from './Transition/CollapseTransition';
