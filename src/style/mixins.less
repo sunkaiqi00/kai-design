@@ -1,3 +1,5 @@
+@import './varibales.less';
+
 .flex-col-row-center-gap6 {
   display: flex;
   gap: 6px;
@@ -62,18 +64,19 @@
     transform: @scaleEnd;
     transform-origin: @origin;
     opacity: 1;
-    transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1) 100ms,
-      opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) 100ms;
+    transition: transform @tranisiton-time-slow cubic-bezier(0.23, 1, 0.32, 1) 100ms,
+      opacity @tranisiton-time-slow cubic-bezier(0.23, 1, 0.32, 1) 100ms;
   }
   .zoom-in-@{direction}-exit {
     opacity: 1;
   }
-  .zoom-in@{direction}-exit-active {
+
+  .zoom-in-@{direction}-exit-active {
     transform: @scaleStart;
     transform-origin: @origin;
     opacity: 0;
-    transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1) 100ms,
-      opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) 100ms;
+    transition: transform @tranisiton-time-slow cubic-bezier(0.23, 1, 0.32, 1),
+      opacity @tranisiton-time-slow cubic-bezier(0.23, 1, 0.32, 1) 100ms;
   }
 }
 

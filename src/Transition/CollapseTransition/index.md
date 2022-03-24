@@ -20,23 +20,19 @@ export default () => {
   return (
     <>
       <Button onClick={handleClick}>Click Me</Button>
-      <br />
-      <br />
+
       <CollapseTransition in={show} animation="zoom-in-left" appear={false}>
         <div style={divStyle}>zoom-in-left</div>
       </CollapseTransition>
-      <br />
-      <br />
+
       <CollapseTransition in={show} animation="zoom-in-top">
         <div style={divStyle}>zoom-in-top</div>
       </CollapseTransition>
-      <br />
-      <br />
+
       <CollapseTransition in={show} animation="zoom-in-right">
         <div style={divStyle}>zoom-in-right</div>
       </CollapseTransition>
-      <br />
-      <br />
+
       <CollapseTransition in={show} animation="zoom-in-bottom">
         <div style={divStyle}>zoom-in-bottom</div>
       </CollapseTransition>

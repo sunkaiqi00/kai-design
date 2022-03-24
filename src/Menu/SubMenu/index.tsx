@@ -83,6 +83,12 @@ const SubMenu: React.FC<SubMenuProps> = (props) => {
     const classes = classNames('kai-submenu', {
       'menu-opened': isSubOpen,
     });
+
+    // context.mode === 'vertical' ?
+    // isSubOpen && <ul className={classes}>{childrenElementList}</ul> :
+    // <CollapseTransition in={isSubOpen} addEndListener={() => { }}>
+    //   <ul className={classes}>{childrenElementList}</ul>
+    // </CollapseTransition>
     return (
       <CollapseTransition in={isSubOpen} addEndListener={() => {}}>
         <ul className={classes}>{childrenElementList}</ul>
