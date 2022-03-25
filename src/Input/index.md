@@ -39,7 +39,6 @@ export default () => {
 ```tsx
 import React, { useState } from 'react';
 import { Input } from 'kai-design';
-import { SearchOutlined } from '@ant-design/icons';
 
 export default () => {
   const [text, setText] = useState('');
@@ -68,11 +67,14 @@ export default () => <Input clearable placeholder="请输入内容..." />;
 ```tsx
 import React from 'react';
 import { Input } from 'kai-design';
-import { SearchOutlined, FormOutlined } from '@ant-design/icons';
+import { SearchOutlined, FormOutlined, FontSizeOutlined } from '@ant-design/icons';
 
 export default () => {
   return (
     <>
+      <Input prefixIcon={<FontSizeOutlined />} placeholder="请输入内容..." />
+      <br />
+
       <Input prefixIcon={<SearchOutlined />} placeholder="请输入内容..." />
       <br />
       <Input suffixIcon={<FormOutlined />} placeholder="请输入内容..." />
