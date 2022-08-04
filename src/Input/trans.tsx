@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import Input, { InputProps } from '.';
-import TextArea, { TextAreaProps } from './textarea';
+import TextArea, { BaseTextAreaProps } from './textarea';
 
 export type IInput = FC<InputProps> & {
-  TextArea: FC<TextAreaProps>;
+  TextArea: FC<BaseTextAreaProps>;
 };
 
 const TransInput = Input as IInput;
