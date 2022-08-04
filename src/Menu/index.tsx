@@ -22,7 +22,8 @@ interface IMenuContext {
 
 export const MenuContext = createContext<IMenuContext>({ selectedIndex: '' });
 
-const Menu: React.FC<MenuProps> = memo((props) => {
+// const Menu: React.FC<MenuProps> = memo((props) => {
+const Menu = memo((props: any) => {
   const {
     selectedIndex,
     className,

@@ -55,8 +55,8 @@ export interface BaseColProps {
    */
   className?: string;
 }
-
-const Col: FC<BaseColProps> = (props) => {
+// const Col: FC<BaseColProps> = (props) => {
+const Col = (props: any) => {
   const {
     span,
     offset,

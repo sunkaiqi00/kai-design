@@ -53,8 +53,9 @@ export interface BaseRowProps {
    */
   style?: object;
 }
+// const Row: FC<BaseRowProps> = (props:any) => {
 
-const Row: FC<BaseRowProps> = (props) => {
+const Row = (props: any) => {
   const { gutter, wrap, children, justify, align, style, ...resetProps } = props;
   const RowStyle = { ...style };
 

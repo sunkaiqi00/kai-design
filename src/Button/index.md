@@ -22,26 +22,6 @@ export default () => (
   <>
     <Row>
       <Col span={24} style={{ display: 'inline-flex', gap: '10px' }}>
-        <Button type="primary" plain>
-          Primary
-        </Button>
-        <Button type="success" plain>
-          Success
-        </Button>
-        <Button type="info" plain>
-          Info
-        </Button>
-        <Button type="warning" plain>
-          Warning
-        </Button>
-        <Button type="danger" plain>
-          Danger
-        </Button>
-      </Col>
-    </Row>
-    <br />
-    <Row>
-      <Col span={24} style={{ display: 'inline-flex', gap: '10px' }}>
         <Button>Default</Button>
         <Button type="primary">Primary</Button>
         <Button type="success">Success</Button>

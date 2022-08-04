@@ -29,11 +29,13 @@ interface TransitionProps {
 
 type collProps = TransitionProps & CSSTransitionProps;
 
-const Transition: React.FC<collProps> = (props) => {
+// const Transition: React.FC<collProps> = (props) => {
+const Transition: React.FC<collProps> = (props: any) => {
   const { children, wrapper, classNames, name, ...resetProps } = props;
   const classes = classNames ? classNames : name;
   return (
     <CSSTransition classNames={classes} {...resetProps}>
+      {/* {children} */}
       {wrapper ? <div>{children}</div> : children}
     </CSSTransition>
   );
