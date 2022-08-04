@@ -11,4 +11,4 @@ export { default as Menu } from './Menu/trans';
 
 export { default as Progress } from './Progress';
 
-export { default as CollapseTransition } from './Transition/CollapseTransition';
+export { default as Transition } from './Transition';

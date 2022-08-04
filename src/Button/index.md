@@ -8,7 +8,7 @@
 
 ```tsx
 import React from 'react';
-import { Button } from 'kai-design';
+import { Button, Row, Col } from 'kai-design';
 import {
   SearchOutlined,
   EditOutlined,
@@ -20,91 +20,100 @@ import {
 
 export default () => (
   <>
-    <Button type="primary" plain>
-      Primary
-    </Button>
+    <Row>
+      <Col span={24} style={{ display: 'inline-flex', gap: '10px' }}>
+        <Button type="primary" plain>
+          Primary
+        </Button>
+        <Button type="success" plain>
+          Success
+        </Button>
+        <Button type="info" plain>
+          Info
+        </Button>
+        <Button type="warning" plain>
+          Warning
+        </Button>
+        <Button type="danger" plain>
+          Danger
+        </Button>
+      </Col>
+    </Row>
     <br />
+    <Row>
+      <Col span={24} style={{ display: 'inline-flex', gap: '10px' }}>
+        <Button>Default</Button>
+        <Button type="primary">Primary</Button>
+        <Button type="success">Success</Button>
+        <Button type="info">Info</Button>
+        <Button type="warning">Warning</Button>
+        <Button type="danger">Danger</Button>
+      </Col>
+    </Row>
     <br />
-    <Button type="success" plain>
-      Success
-    </Button>
+    <Row>
+      <Col span={24} style={{ display: 'inline-flex', gap: '10px' }}>
+        <Button type="primary" plain>
+          Primary
+        </Button>
+        <Button type="success" plain>
+          Success
+        </Button>
+        <Button type="info" plain>
+          Info
+        </Button>
+        <Button type="warning" plain>
+          Warning
+        </Button>
+        <Button type="danger" plain>
+          Danger
+        </Button>
+      </Col>
+    </Row>
     <br />
+    <Row>
+      <Col span={24} style={{ display: 'inline-flex', gap: '10px' }}>
+        <Button round>Default</Button>
+        <Button type="primary" round>
+          Primary
+        </Button>
+        <Button type="success" round>
+          Success
+        </Button>
+        <Button type="info" round>
+          Info
+        </Button>
+        <Button type="warning" round>
+          Warning
+        </Button>
+        <Button type="danger" round>
+          Danger
+        </Button>
+      </Col>
+    </Row>
     <br />
-    <Button type="info" plain>
-      Info
-    </Button>
-    <br />
-    <br />
-    <Button type="warning" plain>
-      Warning
-    </Button>
-    <br />
-    <br />
-    <Button type="danger" plain>
-      Danger
-    </Button>
-    <br />
-    <br />
-    <Button>Default</Button>
-    <Button type="primary">Primary</Button>
-    <Button type="success">Success</Button>
-    <Button type="info">Info</Button>
-    <Button type="warning">Warning</Button>
-    <Button type="danger">Danger</Button>
-    <br />
-    <Button type="primary" plain>
-      Primary
-    </Button>
-    <Button type="success" plain>
-      Success
-    </Button>
-    <Button type="info" plain>
-      Info
-    </Button>
-    <Button type="warning" plain>
-      Warning
-    </Button>
-    <Button type="danger" plain>
-      Danger
-    </Button>
-    <br />
-    <Button round>Default</Button>
-    <Button type="primary" round>
-      Primary
-    </Button>
-    <Button type="success" round>
-      Success
-    </Button>
-    <Button type="info" round>
-      Info
-    </Button>
-    <Button type="warning" round>
-      Warning
-    </Button>
-    <Button type="danger" round>
-      Danger
-    </Button>
-    <br />
-    <Button circle>
-      <SearchOutlined />
-    </Button>
-
-    <Button circle type="primary">
-      <EditOutlined />
-    </Button>
-
-    <Button circle type="success">
-      <CheckOutlined />
-    </Button>
-    <Button circle type="info">
-      <FileTextOutlined />
-    </Button>
-    <Button circle type="warning">
-      <ExclamationCircleOutlined />
-    </Button>
-    <Button circle type="danger">
-      <DeleteOutlined />
-    </Button>
+    <Row>
+      <Col span={24} style={{ display: 'inline-flex', gap: '10px' }}>
+        <Button circle>
+          <SearchOutlined />
+        </Button>
+        <Button circle type="primary">
+          <EditOutlined />
+        </Button>
+        <Button circle type="success">
+          <CheckOutlined />
+        </Button>
+        <Button circle type="info">
+          <FileTextOutlined />
+        </Button>
+        <Button circle type="warning">
+          <ExclamationCircleOutlined />
+        </Button>
+        <Button circle type="danger">
+          <DeleteOutlined />
+        </Button>
+      </Col>
+    </Row>
   </>
 );
 ```
@@ -117,42 +126,50 @@ export default () => (
 
 ```tsx
 import React from 'react';
-import { Button } from 'kai-design';
+import { Button, Row, Col } from 'kai-design';
 
 export default () => (
   <>
-    <Button disabled>Default</Button>
-    <Button disabled type="primary">
-      Primary
-    </Button>
-    <Button disabled type="success">
-      Success
-    </Button>
-    <Button disabled type="info">
-      Info
-    </Button>
-    <Button disabled type="warning">
-      Warning
-    </Button>
-    <Button disabled type="danger">
-      Danger
-    </Button>
+    <Row>
+      <Col span={24} style={{ display: 'inline-flex', gap: '10px' }}>
+        <Button disabled>Default</Button>
+        <Button disabled type="primary">
+          Primary
+        </Button>
+        <Button disabled type="success">
+          Success
+        </Button>
+        <Button disabled type="info">
+          Info
+        </Button>
+        <Button disabled type="warning">
+          Warning
+        </Button>
+        <Button disabled type="danger">
+          Danger
+        </Button>
+      </Col>
+    </Row>
     <br />
-    <Button disabled type="primary" plain>
-      Primary
-    </Button>
-    <Button disabled type="success" plain>
-      Success
-    </Button>
-    <Button disabled type="info" plain>
-      Info
-    </Button>
-    <Button disabled type="warning" plain>
-      Warning
-    </Button>
-    <Button disabled type="danger" plain>
-      Danger
-    </Button>
+    <Row>
+      <Col span={24} style={{ display: 'inline-flex', gap: '10px' }}>
+        <Button disabled type="primary" plain>
+          Primary
+        </Button>
+        <Button disabled type="success" plain>
+          Success
+        </Button>
+        <Button disabled type="info" plain>
+          Info
+        </Button>
+        <Button disabled type="warning" plain>
+          Warning
+        </Button>
+        <Button disabled type="danger" plain>
+          Danger
+        </Button>
+      </Col>
+    </Row>
   </>
 );
 ```
@@ -165,9 +182,9 @@ import { Button } from 'kai-design';
 
 export default () => (
   <>
-    <Button type="text">Default</Button>
+    <Button type="text">Text</Button>
     <Button disabled type="text">
-      Primary
+      Text Disable
     </Button>
   </>
 );
@@ -179,18 +196,22 @@ export default () => (
 
 ```tsx
 import React from 'react';
-import { Button } from 'kai-design';
+import { Button, Row, Col } from 'kai-design';
 import { SearchOutlined, LeftOutlined, RightOutlined } from '@ant-design/icons';
 
 export default () => (
   <>
-    <Button icon={<SearchOutlined />}>Search</Button>
-    <Button type="primary">
-      <LeftOutlined /> Prev
-    </Button>
-    <Button type="primary">
-      Next <RightOutlined />
-    </Button>
+    <Row>
+      <Col span={24} style={{ display: 'inline-flex', gap: '10px' }}>
+        <Button icon={<SearchOutlined />}>Search</Button>
+        <Button type="primary">
+          <LeftOutlined /> Prev
+        </Button>
+        <Button type="primary">
+          Next <RightOutlined />
+        </Button>
+      </Col>
+    </Row>
   </>
 );
 ```
@@ -203,13 +224,21 @@ export default () => (
 
 ```tsx
 import React, { useState } from 'react';
-import { Button } from 'kai-design';
+import { Button, Row, Col } from 'kai-design';
 
 export default () => (
   <>
-    <Button size="large">Large Button</Button>
-    <Button>Default Button</Button>
-    <Button size="small">Small Button</Button>
+    <Row>
+      <Col span={4}>
+        <Button size="large">Large Button</Button>
+      </Col>
+      <Col span={4}>
+        <Button>Default Button</Button>
+      </Col>
+      <Col span={4}>
+        <Button size="small">Small Button</Button>
+      </Col>
+    </Row>
   </>
 );
 ```

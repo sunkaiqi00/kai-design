@@ -3,7 +3,7 @@ import { RightOutlined, DownOutlined } from '@ant-design/icons';
 
 import classNames from 'classnames';
 
-import CollapseTransition from '../../Transition/CollapseTransition';
+import Transition from '../../Transition';
 
 import { MenuContext } from '../';
 import { MenuItemProps } from '../MenuItem/';
@@ -86,13 +86,13 @@ const SubMenu: React.FC<SubMenuProps> = (props) => {
 
     // context.mode === 'vertical' ?
     // isSubOpen && <ul className={classes}>{childrenElementList}</ul> :
-    // <CollapseTransition in={isSubOpen} addEndListener={() => { }}>
+    // <Transition in={isSubOpen} addEndListener={() => { }}>
     //   <ul className={classes}>{childrenElementList}</ul>
-    // </CollapseTransition>
+    // </Transition>
     return (
-      <CollapseTransition in={isSubOpen} addEndListener={() => {}}>
+      <Transition in={isSubOpen} addEndListener={() => {}} name="zoom-in-top">
         <ul className={classes}>{childrenElementList}</ul>
-      </CollapseTransition>
+      </Transition>
     );
   };
   // 第一级的图标需要翻转动画  现在是有翻转动画 看不到是因为没有设置过渡
