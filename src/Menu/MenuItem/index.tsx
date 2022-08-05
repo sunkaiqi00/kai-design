@@ -9,7 +9,6 @@ export interface MenuItemProps {
   style?: object;
 }
 
-// const MenuItem: React.FC<MenuItemProps> = memo((props) => {
 const MenuItem: React.FC<MenuItemProps> = memo((props: any) => {
   const { index = '', className, disabled, style, children } = props;
   const context = useContext(MenuContext);

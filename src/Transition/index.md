@@ -1,6 +1,6 @@
 ## 内置过渡动画
 
-## Fade 淡入淡出
+### Fade 淡入淡出
 
 提供 `fade-in-linear`， `fade-in` 两种种效果。
 
@@ -44,7 +44,7 @@ export default () => {
 };
 ```
 
-## Zoom 缩放
+### Zoom 缩放
 
 提供 `zoom-in-left`， `zoom-in-top`， `zoom-in-right`， `zoom-in-bottom` 三种效果。
 

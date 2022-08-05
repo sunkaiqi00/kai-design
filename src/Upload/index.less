@@ -1,0 +1,89 @@
+@import '../style/varibales.less';
+
+.kai-upload-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.kai-upload-component {
+  display: inline-block;
+}
+.kai-upload-dragger {
+  display: inline-block;
+  box-sizing: border-box;
+  text-align: center;
+  background: @gray-100;
+  border: 1px dashed @gray-300;
+  border-radius: 4px;
+  cursor: pointer;
+  &:hover {
+    border: 1px dashed @primary;
+  }
+  &.is-dragover {
+    background: rgba(@primary, 0.2);
+    border: 1px dashed @primary;
+  }
+  .kai-upload-dragger-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    color: @gray-700;
+    > div {
+      margin-top: 6px;
+      font-size: @font-size;
+    }
+  }
+}
+
+.kai-upload-list-item {
+  box-sizing: border-box;
+  box-sizing: border-box;
+  margin-top: 5px;
+  // min-width: 200px;
+  padding-left: 6px;
+  font-size: 14px;
+  line-height: 1.8;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+  &:first-child {
+    margin-top: 10px;
+  }
+  .kai-upload-item-info {
+    display: flex;
+    .file-name {
+      flex: 1;
+      .file-name-text {
+        margin-left: 5px;
+      }
+    }
+    .file-status-icon {
+      width: 3em;
+      text-align: center;
+    }
+  }
+
+  .file-name-success {
+    color: @primary-color;
+  }
+  .file-name-error {
+    color: @error-color;
+  }
+  .file-actions {
+    display: none;
+    color: @gray-600;
+    cursor: pointer;
+  }
+  &:hover {
+    background-color: @gray-200;
+    .file-status {
+      display: none;
+    }
+    .file-actions {
+      display: block;
+    }
+  }
+}

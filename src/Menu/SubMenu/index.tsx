@@ -16,8 +16,7 @@ export interface SubMenuProps {
   icon?: ReactNode;
 }
 
-// const SubMenu: React.FC<SubMenuProps> = (props) => {
-const SubMenu = (props: any) => {
+const SubMenu: React.FC<SubMenuProps> = (props: any) => {
   const context = useContext(MenuContext);
   const { index, title, icon, className, disabled, children } = props;
   const defaultOpenIndex = context.defaultOpenIndex as Array<string>;

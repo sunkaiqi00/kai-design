@@ -22,8 +22,7 @@ interface IMenuContext {
 
 export const MenuContext = createContext<IMenuContext>({ selectedIndex: '' });
 
-// const Menu: React.FC<MenuProps> = memo((props) => {
-const Menu = (props: any) => {
+const Menu: React.FC<MenuProps> = memo((props: any) => {
   const {
     selectedIndex,
     className,
@@ -77,7 +76,7 @@ const Menu = (props: any) => {
       <MenuContext.Provider value={ContextValue}>{renderChildren()}</MenuContext.Provider>
     </ul>
   );
-};
+});
 
 Menu.defaultProps = {
   mode: 'horizontal',
