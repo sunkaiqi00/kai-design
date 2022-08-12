@@ -90,7 +90,7 @@ type NativeButtonProps = Omit<
 type AnchorButtonProps = BaseButtonProps & React.AnchorHTMLAttributes<HTMLAnchorElement>;
 
 // Partial 将所有属性转为可选
-type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>;
+export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>;
 
 const Button: React.FC<ButtonProps> = (props) => {
   const {

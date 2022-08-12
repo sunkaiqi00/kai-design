@@ -13,7 +13,9 @@ import { Upload } from 'kai-design';
 export default () => {
   return (
     <>
-      <Upload action="/jsonplaceholder/posts/" accept=".png" showProgress />
+      <Upload action="/jsonplaceholder/posts/" accept=".png" showProgress>
+        上传图片
+      </Upload>
     </>
   );
 };

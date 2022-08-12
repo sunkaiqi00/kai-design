@@ -1,4 +1,4 @@
-import React, { ReactNode, useContext, useState } from 'react';
+import React, { ReactElement, ReactNode, useContext, useState } from 'react';
 import { RightOutlined, DownOutlined } from '@ant-design/icons';
 
 import classNames from 'classnames';
@@ -14,6 +14,7 @@ export interface SubMenuProps {
   className?: string;
   disabled?: boolean;
   icon?: ReactNode;
+  children?: ReactElement | string;
 }
 
 const SubMenu: React.FC<SubMenuProps> = (props: any) => {

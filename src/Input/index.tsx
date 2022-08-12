@@ -6,7 +6,6 @@ import React, {
   useState,
   useRef,
   KeyboardEvent,
-  KeyboardEventHandler,
   useEffect,
 } from 'react';
 import classNames from 'classnames';

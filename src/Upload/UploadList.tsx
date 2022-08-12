@@ -8,7 +8,7 @@ import {
   LoadingOutlined,
 } from '@ant-design/icons';
 
-import { UploadFile } from './Upload';
+import { UploadFile } from './';
 import Progress from '../Progress';
 
 interface UploadListProps {

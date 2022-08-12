@@ -283,7 +283,7 @@ const Upload: FC<BaseUploadProps> = (props: any) => {
           {drag ? (
             <Dragger onFile={dragFile}>{children}</Dragger>
           ) : (
-            <Button icon={<UploadOutlined />}>Upload File</Button>
+            <Button icon={<UploadOutlined />}>{children || 'Upload File'}</Button>
           )}
           <input
             ref={uploadInputRef}

@@ -1,4 +1,4 @@
-import React, { memo, MouseEvent, useCallback, useContext } from 'react';
+import React, { memo, MouseEvent, ReactElement, useCallback, useContext } from 'react';
 import classNames from 'classnames';
 import { MenuContext } from '../';
 
@@ -7,6 +7,7 @@ export interface MenuItemProps {
   className?: string;
   disabled?: boolean;
   style?: object;
+  children?: ReactElement | string;
 }
 
 const MenuItem: React.FC<MenuItemProps> = memo((props: any) => {
