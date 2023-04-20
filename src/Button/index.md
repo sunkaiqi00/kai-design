@@ -283,6 +283,4 @@ export default () => (
 );
 ```
 
-//exports='["BaseButtonProps"]'
-
 <API></API>
