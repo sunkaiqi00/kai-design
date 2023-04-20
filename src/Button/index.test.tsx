@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
-import Button, { ButtonProps } from './';
+import Button, { ButtonProps } from '.';
 
 // test('Button test', () => {
 //   const view = render(<Button>Test Button</Button>)
