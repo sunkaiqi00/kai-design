@@ -122,6 +122,7 @@ const Button: React.FC<ButtonProps> = (props) => {
     'is-disabled': isDisabled,
     disabled: type === 'link' && disabled,
   });
+
   if (type === 'link' && href) {
     return (
       <a className={classes} href={href} {...resetProps}>
